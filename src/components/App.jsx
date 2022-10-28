@@ -18,25 +18,23 @@ export const App = () => {
     bad,
   };
 
-
  const handleChange = (event) => {
     const { name } = event.target;
     switch (name) {
       case "good":
-        setGood(pGood => pGood + 1);
+        setGood(prevGood => prevGood + 1);
         break;
       case "neutral":
-        setNeutral(pNeutral => pNeutral + 1);
+        setNeutral(prevNeutral => prevNeutral + 1);
         break;
       case "bad":
-        setBad(pBad => pBad + 1);
+        setBad(prevBad => prevBad + 1);
         break;
 
       default:
         return null;  
     }   
   }
-
 
  const countTotalFeedback  = () => {
     return neutral + good + bad;
