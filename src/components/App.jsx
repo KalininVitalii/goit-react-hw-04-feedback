@@ -3,7 +3,7 @@ import { Statistics } from './statistics/statistics'
 import { FeedbackOptions } from './feedbackOptions/feedbackOptions'
 import { Section } from './section/section';
 import { Notification } from './notification/notification';
-import { useEffect } from 'react';
+
 
 
 export const App = () => {
@@ -17,6 +17,7 @@ export const App = () => {
     neutral,
     bad,
   };
+
 
  const handleChange = (event) => {
     const { name } = event.target;
@@ -50,7 +51,6 @@ export const App = () => {
         <Section title="Please leave feedback">
           <FeedbackOptions options={options} onLeaveFeedback={handleChange} />
         </Section>
-        
         <Section title="Statistics">
         {countTotalFeedback()
         ? <Statistics good={good}
